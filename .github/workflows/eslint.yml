@@ -7,15 +7,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-      - name: 'Cache Node Modules'
-        id: cache-node-modules 
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}    
-      - name: Install modules
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: yarn install
-      - name: Run ESLint
-        run: yarn run eslint
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      name: Cache Node Modules
+      id: cache-node-modules
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}    
+    - name: Install modules
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: yarn install
+    - name: Run ESLint
+      run: yarn run eslint
