@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "eslint": "eslint \"*.js\"",
-    "format": "prettier --check \"*.js\""
+    "format:check": "prettier --check \"*.js\"",
+    "format": "prettier --write \"*.js\""
   },
   "devDependencies": {
     "eslint": "^7.8.1"
