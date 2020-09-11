@@ -1,11 +1,20 @@
 name: CI
-on: push
+on:
+  push:
+    branches: [master]
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
+        id: cache-node-modules 
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}    
     - name: Install modules
-      run: yarn
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: yarn install
     - name: Run ESLint
       run: yarn run eslint
