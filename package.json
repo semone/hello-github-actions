@@ -5,13 +5,14 @@
   "repository": "git@github.com:semone/hello-github-actions.git",
   "author": "Semone Kallin Thander <semoneclarke@gmail.com>",
   "license": "MIT",
-
   "scripts": {
     "eslint": "eslint \"*.js\"",
     "format": "echo format"
-    
   },
   "devDependencies": {
     "eslint": "^7.8.1"
+  },
+  "dependencies": {
+    "prettier": "^2.1.1"
   }
 }
