@@ -1,0 +1,15 @@
+{
+  "name": "hello-github-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:semone/hello-github-actions.git",
+  "author": "Semone Kallin Thander <semoneclarke@gmail.com>",
+  "license": "MIT",
+
+  "scripts": {
+    "eslint": "*/.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.8.1"
+  }
+}
